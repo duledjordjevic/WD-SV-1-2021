@@ -1,0 +1,11 @@
+.text {
+    width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .text{
+        width: 80%;
+    }
+}
