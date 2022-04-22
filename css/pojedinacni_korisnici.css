@@ -1,0 +1,55 @@
+.container .link {
+    text-align: center;
+    margin: 20px;
+}
+.container .link a{
+    font-size: 1.7rem;
+    color: #CF2626;
+}
+.container .link a:hover{
+    border-bottom: 2px solid #CF2626;
+}
+.name-picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name-picture h1{
+    color: #000;
+    text-align: center;
+    font-size: 3rem;
+    margin: 30px;
+}
+.section .container hr{
+    width: 80%;
+    margin: auto;
+    border-top: 2px solid rgb(198, 45, 34);
+}
+.container .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container .text p{
+    font-size: 1.5rem;
+    margin: 20px;
+}
+.section{
+    min-height: 65vh;
+}
+.name-picture img{
+    width: 100px;
+    margin: 20px;
+}
+
+@media (max-width: 768px) {
+    .name-picture{
+        flex-direction: column;
+    }
+    .name-picture h1{
+        margin: 5px;
+    }
+    .name-picture img{
+        margin: 5px;
+    }
+}
