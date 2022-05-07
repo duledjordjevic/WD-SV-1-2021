@@ -4,10 +4,10 @@
 }
 .container .link a{
     font-size: 1.7rem;
-    color: #CF2626;
+    color: var(--primary-color);
 }
 .container .link a:hover{
-    border-bottom: 2px solid #CF2626;
+    border-bottom: 2px solid var(--primary-color);
 }
 .name-picture{
     display: flex;

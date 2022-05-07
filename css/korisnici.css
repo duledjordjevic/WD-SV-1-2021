@@ -13,7 +13,7 @@
 .users-table-title hr{
     width: 800px;
     margin: 8px;
-    border-top: 2px solid #009879
+    border-top: 2px solid var(--primary-color);
 }
 .users-table-title h1{
     color: #000;
@@ -28,7 +28,7 @@
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
 .users-table thead tr{
-    background-color: #009879;
+    background-color: var(--primary-color);
     color: #fff;
     text-align: center;
     font-weight: bold;
@@ -46,7 +46,7 @@
     background-color: #f3f3f3;
 }
 .users-table tbody tr:last-of-type{
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid var(--primary-color);
 }
 .users-table tbody img{
     width: 30px;
@@ -58,6 +58,10 @@
         width: 85%;
         font-size: 0.8em; 
     }
+    .users-table-title h1{
+        font-size: 2rem;
+        margin: 15px;
+    }
     .users-table th,
     .users-table td{
         padding: 7px 10px;
@@ -66,11 +70,15 @@
         margin: auto;
         width: 80%;
     }
+    .name-cell,
+    .lastname-cell{
+        display: none;
+    }
 }
 
 @media (max-width: 500px) {
-    .users-table-title h1{
-        font-size: 2rem;
-        margin: 20px;
+    .users-table{
+        width: 90%;
+        padding: 10px;
     }
 }
