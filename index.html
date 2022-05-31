@@ -11,6 +11,7 @@
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/main.css">
+    
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -33,9 +34,9 @@
     </nav>
 
     <!-- Section 1 -->
-    <section class="section-1">
-        <div class="container grid">
-            <div class="card">
+    <section class="section-1" id="section-1">
+        <div class="container grid" id="section-1-container">
+            <!-- <div class="card">
                 <img src="Images/npbgd.jpg" alt="">
                 <a href="predstave.html">Narodno pozorište Beograd</a> 
             </div>
@@ -70,7 +71,7 @@
             <div class="card">
                 <img src="Images/vranjsko_pozoriste_bora_stankovic_141019_tw1024.jpg.crdownload" alt="">
                 <a href="predstave.html">Pozorište "Bora Stanković" Vranje</a>
-            </div>
+            </div> -->
         </div>
     </section>
   
@@ -180,34 +181,7 @@
         </div>
           
     </div>
-    <script>
-        var open = document.getElementById('open');
-        var modal_container = document.getElementById('modal-container');
-        var modal_container2 = document.getElementById('modal-container-2');
-        var closeSignIn = document.getElementById('closeSignIn');
-        var closeSignUp = document.getElementById('closeSignUp');
-        var moveToSignUp = document.getElementById('moveToSignUp');
-        var moveToSignIn = document.getElementById('moveToSignIn');
-
-        open.addEventListener('click', () => {
-            modal_container.classList.add('show')
-        });
-
-        closeSignIn.addEventListener('click', () => {
-            modal_container.classList.remove('show')
-        });
-        moveToSignUp.addEventListener('click', () => {
-            modal_container.classList.remove('show')
-            modal_container2.classList.add('show')
-        });
-        moveToSignIn.addEventListener('click', () => {
-            modal_container2.classList.remove('show')
-            modal_container.classList.add('show')
-        });
-        closeSignUp.addEventListener('click', () => {
-            modal_container2.classList.remove('show')
-        });
-
-    </script>
+    <script src="js/pozorista.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
