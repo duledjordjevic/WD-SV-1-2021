@@ -38,14 +38,14 @@
     <section class="section">
         <div class="container">
             <div class="username-text">
-                <img src="Images/hamlet-jdp.jpg" alt="">
-                <h1><span>Hamlet</span> - Izmena predstave</h1>
+                <img src="" alt="" id="picture">
+                <h1 id="title"></h1>
             </div>
             <hr>
             <form name="changeShowData" class = "changeShowData">
                 <div class="input-container">
                     <label for="id">Kod predstave:</label>
-                    <input type="text" name="id" id="id" value = "#122371287" required> <br>
+                    <input type="text" name="id" id="id" value = "" required> <br>
                 </div>
                 <div class="input-container">
                     <label for="duration">Trajanje:</label>
@@ -53,22 +53,22 @@
                 </div>
                 <div class="input-container">
                     <label for="genre">Žanr:</label>
-                    <input type="text" name="genre" id="genre" value = "Drama" required> <br>
+                    <input type="text" name="genre" id="genre" value = "" required> <br>
                 </div>
                 
                 <div class="input-container">
                     <label for="price">Cena karte:</label>
-                    <input type="text" name="price" id="price" value = "700din" pattern="^((\p{L})+(\s(\p{L})+)+)$" required> <br />
+                    <input type="text" name="price" id="price" value = "" pattern="^((\p{L})+(\s(\p{L})+)+)$" required> <br />
                 </div>
                 
                 <div class="input-container">
                     <label for="numberOfViewers">Broj osoba:</label>
-                    <input type="text" name="numberOfViewers" id="numberOfViewers" value = "200" pattern="^((\p{L})+(\s(\p{L})+)+)$" required>  <br />
+                    <input type="text" name="numberOfViewers" id="numberOfViewers" value = "" pattern="^((\p{L})+(\s(\p{L})+)+)$" required>  <br />
                 </div>
                 
                 <div class="input-container">
                     <label for="description">Kratak opis:</label>
-                    <textarea name="description" id="description" cols="30" rows="10">live, die, repeat… Nova postavka tragedije Hamlet Jugoslovenskog dramskog pozorišta izraz je potrebe, želje i obaveze naše kuće da dostojno obeleži četiristogodišnjicu smrti najvećeg pisca u istoriji teatra, Vilijama Šekspira. Prema rečima Gorana Stefanovskog, eminentnog dramskog pisca i autora ove adaptacije – u Hamletu se bitno preispituje ratna groznica, paranoja, spoljnopolitička situacija. Kralj je stalno na štabskim brifinzima. Marširaju vojske, svi su u pripravnosti, vojnici na mrtvoj straži. Logorske vatre, šinjeli… Strani agresori. Policajci u pancirnim uniformama, civilne službe za obezbeđenje. Ludilo princa Hamleta nije samo privatno pitanje, radi se o ludilu cele države. Nije prvi put da se Hamletu to događa. To se njemu desilo više puta i ranije. A po svemu sudeći, i dešavaće mu se. Živi, umri, ponovi… Reditelj Aleksandar Popovski, koji je našoj publici poznat po predstavama u JDP – Kandid ili Optimizam, Metamorfoze, za ulogu najslavnijeg tragičkog junaka odabrao je Nebojšu Glogovca.
+                    <textarea name="description" id="description" cols="30" rows="10">
                     </textarea>
                 </div>
                 
@@ -191,6 +191,7 @@
         </div>
           
     </div>
+    <script src="js/izmena_predstave.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

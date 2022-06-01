@@ -37,47 +37,47 @@
     <section class="section">
         <div class="container">
             <div class="username-text">
-                <h1><span class="username">marko123</span> - Izmena korisnika</h1>
+                <h1><span id="username-title"></span> - Izmena korisnika</h1>
             </div>
             <hr>
             
             <form name="changeUserData" class = "changeUserData">
                 <div class="input-container">
                     <label for="username">Username:</label>
-                    <input type="text" name="username" id="username" value = "marko123" required> <br>
+                    <input type="text" name="username" id="username" value = "" required> <br>
                 </div>
                 <div class="input-container">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" value = "marko.mare@gmail.com" required> <br /> 
+                    <input type="email" name="email" id="email" value = "" required> <br /> 
                 </div>
                 <div class="input-container">
                     <label for="password">Lozinka:</label>
-                    <input type="text" name="password" id="password" value = "marecar123" required> <br>
+                    <input type="text" name="password" id="password" value = "" required> <br>
                 </div>
                 
                 <div class="input-container">
                     <label for="name">Ime:</label>
-                    <input type="text" name="name" id="name" value = "Marko" pattern="^((\p{L})+(\s(\p{L})+)+)$" required> <br />
+                    <input type="text" name="name" id="name" value = "" pattern="^((\p{L})+(\s(\p{L})+)+)$" required> <br />
                 </div>
                 
                 <div class="input-container">
                     <label for="lastname">Prezime:</label>
-                    <input type="text" name="lastname" id="lastname" value = "Marjanovic" pattern="^((\p{L})+(\s(\p{L})+)+)$" required>  <br />
+                    <input type="text" name="lastname" id="lastname" value = "" pattern="^((\p{L})+(\s(\p{L})+)+)$" required>  <br />
                 </div>
                 
                 <div class="input-container">
                     <label for="birthday">Datum rodjenja: </label>
-                    <input type="date" name="birthday" id="birthday" value="2002-05-20"class="birthday" required> <br>
+                    <input type="date" name="birthday" id="birthday" value=""class="birthday" required> <br>
                 </div>
                 
                 <div class="input-container">
                     <label for="address">Adresa:</label>
-                    <input type="text" name="address" value = "Cara Lazara 28, Novi Sad" id="address" required> <br>
+                    <input type="text" name="address" value = "" id="address" required> <br>
                 </div>
                 
                 <div class="input-container">
                     <label for="phone">Broj telefona:</label>
-                    <input type="tel" name="phone" id="phone" value = "0653025398" required> <br>
+                    <input type="tel" name="phone" id="phone" value = "" required> <br>
                 </div>
 
                 <button type="submit" class="btn-change btn">
@@ -194,6 +194,7 @@
         </div>
           
     </div>
+    <script src="js/izmena_korisnika.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

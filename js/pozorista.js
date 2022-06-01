@@ -2,7 +2,7 @@ let pozoristaURL = "https://web-dizajn---projekat-default-rtdb.europe-west1.fire
 
 let section_1 = document.getElementById('section-1');
 let section_1_container = document.getElementById("section-1-container");
-console.log(section_1_container)
+
 let request = new XMLHttpRequest();
 request.onreadystatechange = function () {
   if (this.readyState == 4) {
@@ -25,17 +25,19 @@ request.send();
 function makeCard(pozoriste) {
     let card = document.createElement('div');
     card.classList.add('card');
-    console.log(card)
+
     let img = document.createElement('img');
     img.setAttribute('src', pozoriste.slika);
 
+    const url = new URL(window.location.href.split('/index.html')[0] + '/predstave.html');
+    url.searchParams.set("id", pozoriste.idPredstava)
+    
     let a = document.createElement('a');
     a.innerHTML = pozoriste.naziv;
-    a.setAttribute('href', "#");
+    a.setAttribute('href', url );
 
     card.appendChild(img);
     card.appendChild(a);
-    console.log(card)
     section_1_container.appendChild(card);
             
 }
