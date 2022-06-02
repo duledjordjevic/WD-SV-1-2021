@@ -38,6 +38,7 @@ function makeCard(predstava, key) {
 
     const url = new URL(window.location.href.split('/predstave.html')[0] + '/pojedinacna_predstava.html');
     url.searchParams.set("id", key);
+    url.searchParams.set("parentId", id)
     
     let a = document.createElement('a');
     a.innerHTML = predstava.naziv;

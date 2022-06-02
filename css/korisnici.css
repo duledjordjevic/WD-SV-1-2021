@@ -1,4 +1,12 @@
 /* Table Section */
+th button{
+    padding: 0;
+    border: none;
+    background: none;
+}
+button :hover{
+    cursor: pointer;
+}
 .section .container {
     display: flex;
     flex-direction: column;

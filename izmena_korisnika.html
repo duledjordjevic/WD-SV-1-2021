@@ -12,6 +12,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/izmena_korisnika.css">
+    
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -44,43 +45,44 @@
             <form name="changeUserData" class = "changeUserData">
                 <div class="input-container">
                     <label for="username">Username:</label>
-                    <input type="text" name="username" id="username" value = "" required> <br>
+                    <input type="text" name="username" id="username" value = "" > <br>
+                    
                 </div>
                 <div class="input-container">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" value = "" required> <br /> 
+                    <input type="email" name="email" id="email" value = "" > <br /> 
                 </div>
                 <div class="input-container">
                     <label for="password">Lozinka:</label>
-                    <input type="text" name="password" id="password" value = "" required> <br>
+                    <input type="text" name="password" id="password" value = "" > <br>
                 </div>
                 
                 <div class="input-container">
                     <label for="name">Ime:</label>
-                    <input type="text" name="name" id="name" value = "" pattern="^((\p{L})+(\s(\p{L})+)+)$" required> <br />
+                    <input type="text" name="name" id="name" value = ""  > <br />
                 </div>
                 
                 <div class="input-container">
                     <label for="lastname">Prezime:</label>
-                    <input type="text" name="lastname" id="lastname" value = "" pattern="^((\p{L})+(\s(\p{L})+)+)$" required>  <br />
+                    <input type="text" name="lastname" id="lastname" value = ""  >  <br />
                 </div>
                 
                 <div class="input-container">
                     <label for="birthday">Datum rodjenja: </label>
-                    <input type="date" name="birthday" id="birthday" value=""class="birthday" required> <br>
+                    <input type="date" name="birthday" id="birthday" value=""class="birthday" > <br>
                 </div>
                 
                 <div class="input-container">
                     <label for="address">Adresa:</label>
-                    <input type="text" name="address" value = "" id="address" required> <br>
+                    <input type="text" name="address" value = "" id="address" > <br>
                 </div>
                 
                 <div class="input-container">
                     <label for="phone">Broj telefona:</label>
-                    <input type="tel" name="phone" id="phone" value = "" required> <br>
+                    <input type="tel" name="phone" id="phone" value = "" > <br>
                 </div>
 
-                <button type="submit" class="btn-change btn">
+                <button class="btn-change btn" id="btn">
                     <p>Izmeni</p>
                     <i class="fa-solid fa-check"></i>
                 </button>

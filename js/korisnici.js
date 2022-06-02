@@ -1,28 +1,53 @@
 let korisniciURL = "https://web-dizajn---projekat-default-rtdb.europe-west1.firebasedatabase.app/korisnici.json";
 
-let tbody = document.getElementById('tbody');
+getUsers();
 
-let request = new XMLHttpRequest();
-request.onreadystatechange = function () {
-  if (this.readyState == 4) {
-    if (this.status == 200) {
-        let korisnici = JSON.parse(this.responseText);
+function getUsers(){
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+      if (this.readyState == 4) {
+        if (this.status == 200) {
+            let korisnici = JSON.parse(this.responseText);
+		    removeTableRows('tbody');
+            for (let key in korisnici) {
+                let korisnik = korisnici[key];
+                makeRow(korisnik, key);
+                
+            }
 
-        for (let key in korisnici) {
-            let korisnik = korisnici[key];
-            makeRow(korisnik, key);
+        } else {
+          alert("Greska: " + this.status);
         }
+      }
+    };
+    request.open("GET", korisniciURL);
+    request.send();
+};
+function deleteUser(){
+	let clickedBtn = this;
+  	let id = clickedBtn.getAttribute("data-id");
 
-    } else {
-      alert("Greska: " + this.status);
-    }
+  	let confirm_dialog = confirm("Da li ste sigurni da zelite da obrisete korisnika?");
+  	if (confirm_dialog){
+		let korisnikURL = korisniciURL.split('.json')[0] + "/" + id + ".json";
+		
+		let request = new XMLHttpRequest();
+		request.onreadystatechange = function () {
+		if (this.readyState == 4) {
+			if (this.status == 200) {
+				getUsers();
+
+			} else {
+			// alert("Greska: " + this.status);
+			}
+		}
+		};
+		request.open("DELETE", korisnikURL);
+		request.send();
   }
 };
-request.open("GET", korisniciURL);
-request.send();
-
 function makeRow(korisnik, key){
-
+    let tbody = document.getElementById('tbody');
     let tr = document.createElement('tr');
 
     let th1 = document.createElement('th');
@@ -38,13 +63,12 @@ function makeRow(korisnik, key){
     th4.innerHTML = korisnik.prezime;
 
     let th5 = document.createElement('th');
-    let a1 = document.createElement('a');
-    let i = document.createElement('i');
-    i.classList.add("fa", "fa-trash");
-    i.setAttribute('aria-hidden', true);
-    a1.setAttribute('href', "")
-    th5.appendChild(a1);
-    a1.appendChild(i);
+    let btn = document.createElement('button');
+    btn.innerHTML = `<i class="fa fa-trash" aria-hidden="true"></i>`;
+    btn.onclick =  deleteUser;
+	btn.setAttribute("data-id", key);
+    th5.appendChild(btn);
+    
     
     let th6 = document.createElement('th');
     let a2 = document.createElement('a');
@@ -67,3 +91,10 @@ function makeRow(korisnik, key){
     tbody.appendChild(tr);
 
 }
+function removeTableRows(tBodyId) {
+	let tBody = document.getElementById(tBodyId);
+	while (tBody.firstChild) {
+	  tBody.removeChild(tBody.lastChild);
+	}
+}
+

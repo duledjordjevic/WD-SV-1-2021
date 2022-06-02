@@ -10,9 +10,11 @@ let max_people = document.getElementById('max_people');
 let avg_mark = document.getElementById('avg_mark');
 let description = document.getElementById('description');
 let link = document.getElementById('link');
+let delete_link = document.getElementById('delete-link');
 
 const url = new URL(window.location.href);
-const id = url.href.split("id=")[1];
+const id = url.href.split("id=")[1].split("&")[0];
+const parentId = url.href.split("id=")[1].split("&")[1].split("Id=")[1];
 
 let request = new XMLHttpRequest();
 request.onreadystatechange = function () {
@@ -72,6 +74,30 @@ function makeDescription(predstava){
 
     const url = new URL(window.location.href.split('/pojedinacna_predstava.html')[0] + '/izmena_predstave.html');
     url.searchParams.set("id", id);
+    url.searchParams.set("parentId", parentId);
 
     link.setAttribute('href', url);
 }
+
+delete_link.addEventListener('click', function(e){
+    
+
+    let confirm_dialog = confirm("Da li ste sigurni da zelite da obrisete korisnika?");
+    if (confirm_dialog){
+		let predstavaURL = predstaveURL.split(".json")[0] + "/" + parentId + "/" + id + ".json";
+    	
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+            window.location.href = "predstave.html?id=" + parentId ;
+    
+          } else {
+          alert("Greska: " + this.status);
+          }
+        }
+        };
+        request.open("DELETE", predstavaURL);
+        request.send();
+    }
+});

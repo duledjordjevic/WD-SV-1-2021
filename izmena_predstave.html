@@ -49,7 +49,7 @@
                 </div>
                 <div class="input-container">
                     <label for="duration">Trajanje:</label>
-                    <input type="text" name="duration" id="duration" value = "2h15min" required> <br /> 
+                    <input type="text" name="duration" id="duration" value = "" required> <br /> 
                 </div>
                 <div class="input-container">
                     <label for="genre">Žanr:</label>
@@ -65,19 +65,33 @@
                     <label for="numberOfViewers">Broj osoba:</label>
                     <input type="text" name="numberOfViewers" id="numberOfViewers" value = "" pattern="^((\p{L})+(\s(\p{L})+)+)$" required>  <br />
                 </div>
-                
                 <div class="input-container">
-                    <label for="description">Kratak opis:</label>
+                    <label for="shortDescription">Kratak opis:</label>
+                    <textarea name="shortDescription" id="shortDescription" cols="30" rows="10">
+                    </textarea>
+                </div>
+
+                <div class="input-container">
+                    <label for="description">Opis:</label>
                     <textarea name="description" id="description" cols="30" rows="10">
                     </textarea>
                 </div>
+
                 
                 <div class="input-container">
-                    <label for="inputImage">Slika:</label>
-                    <input type="file" name="inputImage"  id="inputImage" accept="image/*" value="Images/hamlet-jdp.jpg" required> <br>
+                    <label for="inputImage">Link za sliku:</label>
+                    <input type="text" name="inputImage"  id="inputImage" disabled> <br>
+                </div>
+                <div class="input-container">
+                    <label for="avg_mark">Prosecna ocena:</label>
+                    <input type="text" name="avg_mark"  id="avg_mark" disabled> <br>
+                </div>
+                <div class="input-container">
+                    <label for="marks">Ocene:</label>
+                    <input type="text" name="marks"  id="marks" disabled> <br>
                 </div>
 
-                <button type="submit" class="btn-change btn">
+                <button type="submit" class="btn-change btn" id="btn">
                     <p>Izmeni</p>
                     <i class="fa-solid fa-check"></i>
                 </button>
