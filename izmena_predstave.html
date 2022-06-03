@@ -126,85 +126,88 @@
         </div>
     </footer>
    
-    <!-- Sign In-->
-    <div class="modal-container" id="modal-container">
-        <div class="modalSignIn">
-            <h1>Prijava</h1>
-            <form name="signInForm" class="signInForm">
-                <div class="input-container">
-                    <label for="emailSignIn">Email:</label> <br>
-                    <input type="email" name="emailSignIn" id="emailSignIn" required> <br /> 
-                </div>
-                
-                <div class="input-container">
-                    <label for="passwordSignIn">Lozinka:</label>
-                <input type="password" name="passwordSignIn" id="passwordSignIn" required> <br>
-                </div>
+   <!-- Sign In-->
+   <div class="modal-container" id="modal-container">
+    <div class="modalSignIn">
+        <h1>Prijava</h1>
+        <form name="signInForm" class="signInForm">
+            <div class="input-container">
+                <label for="emailSignIn">Email:</label> <br>
+                <input type="email" name="emailSignIn" id="emailSignIn" > <br /> 
+            </div>
+            
+            <div class="input-container">
+                <label for="passwordSignIn">Lozinka:</label>
+            <input type="password" name="passwordSignIn" id="passwordSignIn" > <br>
+            </div>
 
-                <button type="submit" class="btn-signIn btn">
-                    <p>Potvrdi</p>
-                    <i class="fa-solid fa-check"></i>
-                </button>
-            </form>
-            <a href="#" class="exit"><i class="fa-solid fa-x" id="closeSignIn"></i></a>
-            <a href="#" id="moveToSignUp">Registruj se</a>
-        </div>
+            <button class="btn-signIn btn" id="btnSignIn">
+                <p>Potvrdi</p>
+                <i class="fa-solid fa-check"></i>
+            </button>
+        </form>
+        <a href="#" class="exit"><i class="fa-solid fa-x" id="closeSignIn"></i></a>
+        <a href="#" id="moveToSignUp">Registruj se</a>
     </div>
+</div>
 
-    <!-- Sign Up-->
-    <div class="modal-container-2" id="modal-container-2">
-        <div class="modalSignUp">
-            <h1>Registracija</h1>
-            <form name="signUpForm" class="signUpForm">
-                <div class="input-container">
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" id="username" required> <br>
-                </div>
-                <div class="input-container">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" required> <br /> 
-                </div>
-                <div class="input-container">
-                    <label for="passwordSignUp">Lozinka:</label>
-                    <input type="password" name="passwordSignUp" id="passwordSignUp" required> <br>
-                </div>
-                
-                <div class="input-container">
-                    <label for="name">Ime:</label>
-                    <input type="text" name="name" id="name" pattern="^((\p{L})+(\s(\p{L})+)+)$" required> <br />
-                </div>
-                
-                <div class="input-container">
-                    <label for="lastname">Prezime:</label>
-                <input type="text" name="lastname" id="lastname" pattern="^((\p{L})+(\s(\p{L})+)+)$" required>  <br />
-                </div>
-                
-                <div class="input-container">
-                    <label for="birthday">Datum rodjenja: </label>
-                    <input type="date" name="birthday" id="birthday" class="birthday" required> <br>
-                </div>
-                
-                <div class="input-container">
-                    <label for="address">Adresa:</label>
-                    <input type="text" name="address" id="address" required> <br>
-                </div>
-                
-                <div class="input-container">
-                    <label for="phone">Broj telefona:</label>
-                    <input type="tel" name="phone" id="phone" required> <br>
-                </div>
+<!-- Sign Up-->
+<div class="modal-container-2" id="modal-container-2">
+    <div class="modalSignUp">
+        <h1>Registracija</h1>
+        <form name="signUpForm" class="signUpForm">
+            <div class="input-container">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username"> <br>
+            </div>
+            <div class="input-container">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email"> <br /> 
+            </div>
+            <div class="input-container">
+                <label for="passwordSignUp">Lozinka:</label>
+                <input type="password" name="passwordSignUp" id="passwordSignUp"> <br>
+            </div>
+            
+            <div class="input-container">
+                <label for="name">Ime:</label>
+                <input type="text" name="name" id="name" > <br />
+            </div>
+            
+            <div class="input-container">
+                <label for="lastname">Prezime:</label>
+            <input type="text" name="lastname" id="lastname">  <br />
+            </div>
+            
+            <div class="input-container">
+                <label for="birthday">Datum rodjenja: </label>
+                <input type="date" name="birthday" id="birthday" class="birthday"> <br>
+            </div>
+            
+            <div class="input-container">
+                <label for="address">Adresa:</label>
+                <input type="text" name="address" id="address" > <br>
+            </div>
+            
+            <div class="input-container">
+                <label for="phone">Broj telefona:</label>
+                <input type="tel" name="phone" id="phone" > <br>
+            </div>
 
-                <button type="submit" class="btn-signUp btn">
-                    <p>Potvrdi</p>
-                    <i class="fa-solid fa-check"></i>
-                </button>
-            </form>
+            <button type="submit" class="btn-signUp btn" id="btnSignUp">
+                <p>Potvrdi</p>
+                <i class="fa-solid fa-check"></i>
+            </button>
+        </form>
 
-            <a href="#" class="exit"><i class="fa-solid fa-x" id="closeSignUp"></i></a>
-            <a href="#" id="moveToSignIn">Prijavi se</a>
-        </div>
+        <a href="#" class="exit"><i class="fa-solid fa-x" id="closeSignUp"></i></a>
+        <a href="#" id="moveToSignIn">Prijavi se</a>
+    </div>
           
     </div>
+    
+    <script src="js/login.js"></script>
+    <script src="js/signup.js"></script>
     <script src="js/izmena_predstave.js"></script>
     <script src="js/script.js"></script>
 </body>

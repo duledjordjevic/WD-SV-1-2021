@@ -1,14 +1,14 @@
-let korisniciURL = "https://web-dizajn---projekat-default-rtdb.europe-west1.firebasedatabase.app/korisnici.json";
+korisniciURL = "https://web-dizajn---projekat-default-rtdb.europe-west1.firebasedatabase.app/korisnici.json";
 
 let username_title = document.getElementById('username-title');
-let username = document.getElementById('username');
-let email = document.getElementById('email');
+username = document.getElementById('username');
+email = document.getElementById('email');
 let password = document.getElementById('password');
-let name = document.getElementById('name');
-let lastname = document.getElementById('lastname');
-let birthday = document.getElementById('birthday');
-let address = document.getElementById('address');
-let phone = document.getElementById('phone');
+name = document.getElementById('name');
+lastname = document.getElementById('lastname');
+birthday = document.getElementById('birthday');
+address = document.getElementById('address');
+phone = document.getElementById('phone');
 let btn = document.getElementById('btn');
 
 const url = new URL(window.location.href);
@@ -51,7 +51,7 @@ function changeInputs(korisnik, key){
 
 
 let korisnikURL = "https://web-dizajn---projekat-default-rtdb.europe-west1.firebasedatabase.app/korisnici/" + id + ".json";
-let regexEmail = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+regexEmail = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
 let usernameRegex = /^[a-zA-Z0-9]+$/;
 var regexPsw = /^[A-Za-z]\w{7,14}$/;
 var regexPhone = /[a-zA-Z]/g;
@@ -86,10 +86,10 @@ btn.addEventListener('click', function(e){
     }
     else if(korisnik.prezime.length < 3 || /[0-9]/.test(korisnik.prezime)){
         alert("Prezime mora biti najmanje duzine 2 i ne sme sadrzati brojeve.")
-    }else if(korisnik.adresa < 5){
+    }else if(korisnik.adresa.length < 5){
         alert("Adresa mora sadrzati najmanje 5 karaktera")
     }
-    else if(korisnik.telefon < 9 ||  regexPhone.test(korisnik.telefon)){
+    else if(korisnik.telefon.length < 9 ||  regexPhone.test(korisnik.telefon)){
         alert("Telefon mora sadrzati najmanje 9 karaktera bez slova")
     }else{
         let request = new XMLHttpRequest();

@@ -124,15 +124,15 @@
             <form name="signInForm" class="signInForm">
                 <div class="input-container">
                     <label for="emailSignIn">Email:</label> <br>
-                    <input type="email" name="emailSignIn" id="emailSignIn" required> <br /> 
+                    <input type="email" name="emailSignIn" id="emailSignIn" > <br /> 
                 </div>
                 
                 <div class="input-container">
                     <label for="passwordSignIn">Lozinka:</label>
-                <input type="password" name="passwordSignIn" id="passwordSignIn" required> <br>
+                <input type="password" name="passwordSignIn" id="passwordSignIn" > <br>
                 </div>
 
-                <button type="submit" class="btn-signIn btn">
+                <button class="btn-signIn btn" id="btnSignIn">
                     <p>Potvrdi</p>
                     <i class="fa-solid fa-check"></i>
                 </button>
@@ -149,43 +149,43 @@
             <form name="signUpForm" class="signUpForm">
                 <div class="input-container">
                     <label for="username">Username:</label>
-                    <input type="text" name="username" id="username" required> <br>
+                    <input type="text" name="username" id="username"> <br>
                 </div>
                 <div class="input-container">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" required> <br /> 
+                    <input type="email" name="email" id="email"> <br /> 
                 </div>
                 <div class="input-container">
                     <label for="passwordSignUp">Lozinka:</label>
-                    <input type="password" name="passwordSignUp" id="passwordSignUp" required> <br>
+                    <input type="password" name="passwordSignUp" id="passwordSignUp"> <br>
                 </div>
                 
                 <div class="input-container">
                     <label for="name">Ime:</label>
-                    <input type="text" name="name" id="name" pattern="^((\p{L})+(\s(\p{L})+)+)$" required> <br />
+                    <input type="text" name="name" id="name" > <br />
                 </div>
                 
                 <div class="input-container">
                     <label for="lastname">Prezime:</label>
-                <input type="text" name="lastname" id="lastname" pattern="^((\p{L})+(\s(\p{L})+)+)$" required>  <br />
+                <input type="text" name="lastname" id="lastname">  <br />
                 </div>
                 
                 <div class="input-container">
                     <label for="birthday">Datum rodjenja: </label>
-                    <input type="date" name="birthday" id="birthday" class="birthday" required> <br>
+                    <input type="date" name="birthday" id="birthday" class="birthday"> <br>
                 </div>
                 
                 <div class="input-container">
                     <label for="address">Adresa:</label>
-                    <input type="text" name="address" id="address" required> <br>
+                    <input type="text" name="address" id="address" > <br>
                 </div>
                 
                 <div class="input-container">
                     <label for="phone">Broj telefona:</label>
-                    <input type="tel" name="phone" id="phone" required> <br>
+                    <input type="tel" name="phone" id="phone" > <br>
                 </div>
 
-                <button type="submit" class="btn-signUp btn">
+                <button type="submit" class="btn-signUp btn" id="btnSignUp">
                     <p>Potvrdi</p>
                     <i class="fa-solid fa-check"></i>
                 </button>
@@ -194,8 +194,9 @@
             <a href="#" class="exit"><i class="fa-solid fa-x" id="closeSignUp"></i></a>
             <a href="#" id="moveToSignIn">Prijavi se</a>
         </div>
-          
-    </div>
+        
+    <script src="js/login.js"></script>
+    <script src="js/signup.js"></script>
     <script src="js/izmena_korisnika.js"></script>
     <script src="js/script.js"></script>
 </body>
