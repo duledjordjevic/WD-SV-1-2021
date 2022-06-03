@@ -55,6 +55,7 @@ btnSignUp.addEventListener('click', function(e){
                         let korisnik1 = korisnici[key];
                         if (korisnik1.email == email.value.trim()){
                             tf = true;
+                            break
                         }
                     }
                     if (tf){
@@ -82,7 +83,8 @@ function postUser(korisnik){
             if (this.status == 200) {
                 alert("Uspesno ste se registrovali")
                 closeSignUp.click();
-
+                localStorage.setItem('user', JSON.stringify(korisnik));
+                replaceSignInButton();
             } else {
             alert("Greska: " + this.status);
             }

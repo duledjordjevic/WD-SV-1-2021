@@ -16,16 +16,20 @@ btnSignIn.addEventListener('click', function(e){
                 if (this.status == 200) {
                     let korisnici = JSON.parse(this.responseText);
                     let tf = false;
+                    var korisnik;
                     for (let key in korisnici) {
-                        let korisnik = korisnici[key];
+                        korisnik = korisnici[key];
                         if (korisnik.lozinka == passwordSignIn.value & korisnik.email == emailSignIn.value){
                             tf = true;
-                            
+                            break
                         }
                     }
                     if(tf){
                         alert("Uspesno ste se ulogovali")
                         closeSignIn.click();
+                        localStorage.setItem('user', JSON.stringify(korisnik))
+                        replaceSignInButton();
+
                     }else{
                         alert("Pogresno ste uneli podatke. Molim vas da pokusate ponovo.")
                     }
