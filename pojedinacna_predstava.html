@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/pojedinacni_korisnici.css">
     <link rel="stylesheet" href="css/pojedinacna_predstava.css">
+    <script src='https://cdn.jsdelivr.net/npm/chart.js@2.9.4'></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -35,8 +36,8 @@
     </nav>
 
     <!-- Section 1 -->
-    <section class="section">
-        <div class="container">
+    <section class="section" >
+        <div class="container" id="section-container">
             <div class="name-picture">
                 <img src="" alt="" id="picture">
                 <h1 id="title"></h1>
@@ -52,11 +53,93 @@
                  <p id="description">Opis: <br> </p>
             </div>
             <hr>
-            <div class="comments">
-                <div class="comment">
-                    <p>Username</p>
-                    <p>- Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illum molestias sit, quidem reiciendis in ducimus molestiae quasi vero repellendus doloremque assumenda consectetur eaque nobis possimus esse amet error explicabo?</p>
+            <div class="ratings">
+                <div class="user-ranking skill-bars">
+                    <p>Ocene korisnika</p>
+                    <ul class="rating" id="ul-rating">
+                        
+                    </ul>
+                    <p>Prosek <span id="avg"></span>, bazirano na <span id="count"></span> ocene</p>
                 </div>
+                <div class="all_rankings">
+                    <div class="skill-bars">
+                        <div class="bar">
+                          <div class="info">
+                            <span>5 zvezdica</span>
+                          </div>
+                          <div class="progress-line five">
+                            <span  id="five"></span>
+                          </div>
+                        </div>
+                        <div class="bar">
+                          <div class="info">
+                            <span>4 zvezdice</span>
+                          </div>
+                          <div class="progress-line four">
+                            <span id="four"></span>
+                          </div>
+                        </div>
+                        <div class="bar">
+                          <div class="info">
+                            <span>3 zvezdice</span>
+                          </div>
+                          <div class="progress-line three">
+                            <span id="three"></span>
+                          </div>
+                        </div>
+                        <div class="bar">
+                          <div class="info">
+                            <span>2 zvezdice</span>
+                          </div>
+                          <div class="progress-line two">
+                            <span id="two"></span>
+                          </div>
+                        </div>
+                        <div class="bar">
+                          <div class="info">
+                            <span>1 zvezdica</span>
+                          </div>
+                          <div class="progress-line one">
+                            <span id="one"></span>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                
+            </div>
+            <div class="comments" id="comments">
+                <div class="input-box">
+                    <textarea placeholder="Add a comment..." required></textarea>
+                    <div class="buttons">
+                        <button class="btn-cancel"  id="btn-cancel">Cancel</button>
+                        <button class="btn-comment" id="btn-comment">Comment</button>
+                    </div>
+                    
+                </div>
+                <!-- <div class="comment"> -->
+                    <!-- <p class="username">Username</p>
+                    <p class="comment-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illum molestias sit, quidem reiciendis in ducimus molestiae quasi vero repellendus doloremque assumenda consectetur eaque nobis possimus esse amet error explicabo?</p>
+                    <button class="btn-reply"><i class="fa-solid fa-reply"></i> Reply</button>
+                    <div id="reply-textarea"></div>
+
+                    <div class="reply">
+                        <p class="username">Username</p>
+                        <p class="comment-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illum molestias sit, quidem reiciendis </p>
+                        <button class="btn-reply"> <i class="fa-solid fa-reply"></i> Reply</button>
+                        <div id="reply-textarea"></div>
+                    </div>
+
+                    <div class="reply">
+                        <p class="username">Username</p>
+                        <p class="comment-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illum molestias sit, quidem reiciendis </p>
+                        <button class="btn-reply"> <i class="fa-solid fa-reply"></i> Reply</button>
+                        <div id="reply-textarea"></div>
+                    </div> --> 
+
+                <!-- </div> -->
+                
+
+                
             </div>
             <div class="link">
                 <a href="" id="link">Izmeni predstavu</a>
@@ -176,9 +259,10 @@
     </div>
 
     <script src="js/onload.js"></script>
-    <script src="js/login.js"></script>
     <script src="js/signup.js"></script>
+    <script src="js/rating.js"></script>
     <script src="js/pojedinacna_predstava.js"></script>
+    <script src="js/login.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
