@@ -63,7 +63,6 @@ function makeBar(predstava){
     count_span.innerHTML = count;
 
     avg = Math.round(avg);
-    avg = 1;
     let ul_rating = document.querySelector("#ul-rating");
     if (avg == 5){
         ul_rating.innerHTML = `<li><i class="fa-solid fa-star"></i></li>

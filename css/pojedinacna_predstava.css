@@ -98,9 +98,10 @@ html,body{
   color: #fff;
   background: #6665ee;
 }
+
 .skill-bars{
   padding: 25px 30px;
-  width: 600px;
+  width: 60%;
   background: #fff;
   box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
   border-radius: 10px;
@@ -151,35 +152,7 @@ html,body{
   background: var(--primary-color);
   animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
 }
-.bar .progress-line.five span{
-  width: 90%;
-}
-.bar .progress-line.four span{
-  width: 60%;
-}
-.bar .progress-line.three span{
-  width: 85%;
-}
-.bar .progress-line.two span{
-  width: 50%;
-}
-.bar .progress-line.one span{
-  width: 75%;
-}
-/* .progress-line span::before{
-  position: absolute;
-  content: "";
-  top: -10px;
-  right: 0;
-  height: 0;
-  width: 0;
-  border: 7px solid transparent;
-  border-bottom-width: 0px;
-  border-right-width: 0px;
-  border-top-color: #000;
-  opacity: 0;
-  animation: showText2 0.5s 1.5s linear forwards;
-} */
+
 .progress-line span::after{
   position: absolute;
   top: -28px;
@@ -269,6 +242,17 @@ content: "\2606";
 .rating {
     margin: 10px;
 }
+.user-ranking{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.all_rankings{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
     
 @media (max-width: 768px) {
     .text{

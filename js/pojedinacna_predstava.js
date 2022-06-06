@@ -135,6 +135,7 @@ function makeComments(predstava){
 				</div>`;
 				// console.log(e.path[1].childNodes[3].lastChild.childNodes[3].childNodes[3])
 				// console.log(e.path[1])
+				console.log(e.path[1].childNodes[3].lastChild.childNodes[3].childNodes[1])
 				let btn_cancel_reply = e.path[1].childNodes[3].lastChild.childNodes[3].childNodes[1];
 				let btn_comment_reply = e.path[1].childNodes[3].lastChild.childNodes[3].childNodes[3];
 				
@@ -153,6 +154,7 @@ function makeComments(predstava){
 									for (let key2 in predstave[key1]){
 										if (key2 == id){
 											let predstava = predstave[key1][key2]
+											console.log(key)
 											postReply(predstava, key, reply_textarea.firstChild.childNodes[1], btn_cancel_reply)
 										}
 									}
@@ -233,31 +235,57 @@ function postReply(predstava, key, reply_textarea, btn_cancel_reply){
 			request.send(JSON.stringify(predstava));
 		}
 		else{
-			var last_key;
-			for (let key1 in predstava.reply[key]) {
-				last_key = key1;
-			}
-			last_key = parseInt(last_key) + 1
-			
-			var korisnik = JSON.parse(localStorage.getItem('user'));
-			var korisnickoIme = korisnik.korisnickoIme;
-			predstava.reply[key][last_key] =  korisnickoIme + "-" + reply_textarea.value;
-			let request = new XMLHttpRequest();
-			request.onreadystatechange = function (e) {
-				e.preventDefault();
-				if (this.readyState == 4) {
-					if (this.status == 200) {
-						loadPage();
-						reply_textarea.value = "";
-						btn_cancel_reply.click();
-
-					} else {
-					alert("Greska: " + this.status);
-					}
+			console.log(predstava.reply)
+			if (predstava.reply[key] != undefined){
+				var last_key;
+				for (let key1 in predstava.reply[key]) {
+					last_key = key1;
 				}
-			};
-			request.open("PUT", predstaveURL.split('.json')[0] + "/" + parentId + "/" + id+ ".json");
-			request.send(JSON.stringify(predstava));
+				last_key = parseInt(last_key) + 1
+				
+				var korisnik = JSON.parse(localStorage.getItem('user'));
+				var korisnickoIme = korisnik.korisnickoIme;
+				console.log(predstava.reply)
+				predstava.reply[key][last_key] =  korisnickoIme + "-" + reply_textarea.value;
+				let request = new XMLHttpRequest();
+				request.onreadystatechange = function (e) {
+					e.preventDefault();
+					if (this.readyState == 4) {
+						if (this.status == 200) {
+							loadPage();
+							reply_textarea.value = "";
+							btn_cancel_reply.click();
+
+						} else {
+						alert("Greska: " + this.status);
+						}
+					}
+				};
+				request.open("PUT", predstaveURL.split('.json')[0] + "/" + parentId + "/" + id+ ".json");
+				request.send(JSON.stringify(predstava));
+			}else{
+				console.log("ahd")
+				var korisnik = JSON.parse(localStorage.getItem('user'));
+				var korisnickoIme = korisnik.korisnickoIme;
+				// predstava.reply =  {} ; 
+				predstava.reply[key] = { 0 : korisnickoIme + "-" + reply_textarea.value};
+				console.log(key)
+				let request = new XMLHttpRequest();
+				request.onreadystatechange = function (e) {
+					e.preventDefault();
+					if (this.readyState == 4) {
+						if (this.status == 200) {
+							loadPage();
+							reply_textarea.value = "";
+							btn_cancel_reply.click();
+						} else {
+						alert("Greska: " + this.status);
+						}
+					}
+				};
+				request.open("PUT", predstaveURL.split('.json')[0] + "/" + parentId + "/" + id+ ".json");
+				request.send(JSON.stringify(predstava));
+			}
 		}
 		
 	}
@@ -266,7 +294,7 @@ function postReply(predstava, key, reply_textarea, btn_cancel_reply){
 
 delete_link.addEventListener('click', function(e){
     
-    let confirm_dialog = confirm("Da li ste sigurni da zelite da obrisete korisnika?");
+    let confirm_dialog = confirm("Da li ste sigurni da zelite da obrisete predstavu?");
     if (confirm_dialog){
 		let predstavaURL = predstaveURL.split(".json")[0] + "/" + parentId + "/" + id + ".json";
     	

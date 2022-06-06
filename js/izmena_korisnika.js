@@ -78,8 +78,8 @@ btn.addEventListener('click', function(e){
     }else if(! regexEmail.test(korisnik.email)){
         alert("Molim vas da unesete ispravan email.")
 
-    }else if(regexPsw.test(korisnik.lozinka)){
-        alert("Lozinka mora biti najmanje duzine 7 i mora sadrzati brojeve.")
+    }else if(korisnik.lozinka.length < 8){
+        alert("Lozinka mora biti najmanje duzine 7.")
     }
     else if(korisnik.ime.length < 3 || /[0-9]/.test(korisnik.ime)){
         alert("Ime mora biti najmanje duzine 2 i ne sme sadrzati brojeve.")

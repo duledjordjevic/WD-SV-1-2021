@@ -10,7 +10,10 @@
 .input-container input[type="file"]{
     border: 0;
 }
-
+#reply,
+#comments{
+    display: none;
+}
 @media (max-width: 768px) {
     .username-text img{
         margin: 10px 0 20px 20px;
