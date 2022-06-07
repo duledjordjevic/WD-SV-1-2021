@@ -16,7 +16,7 @@ const url = new URL(window.location.href);
 const id = url.href.split("id=")[1].split("&")[0];
 const parentId = url.href.split("id=")[1].split("&")[1].split("Id=")[1];
 
-function loadPage(){
+function loadPage(is_first){
 	let request = new XMLHttpRequest();
 	request.onreadystatechange = function () {
 	if (this.readyState == 4) {
@@ -27,7 +27,7 @@ function loadPage(){
 				for (let key2 in predstave[key1]){
 					if (key2 == id){
 						let predstava = predstave[key1][key2]
-						makeDescription(predstava)
+						makeDescription(predstava, is_first)
 						
 					}
 				}
@@ -41,13 +41,13 @@ function loadPage(){
 	request.open("GET", predstaveURL);
 	request.send();
 }
-loadPage();
+loadPage(true);
 
 
-function makeDescription(predstava){
+function makeDescription(predstava, is_first){
 	let comments = document.getElementById('comments');
 	
-	if(comments.childElementCount == 1){
+	if(is_first){
 		picture.setAttribute('src', predstava.slika);
 		title.innerHTML = predstava.naziv;
 		
@@ -87,8 +87,12 @@ function makeDescription(predstava){
 	
 		makeComments(predstava)
 		addFunctionalityToTextarea()
+	
 	}else{
-		comments.innerHTML = `<div class="input-box">
+		if(comments.childElementCount == 1){
+			makeComments(predstava)
+		}else{
+			comments.innerHTML = `<div class="input-box">
 		<textarea placeholder="Add a comment..." required></textarea>
 		<div class="buttons">
 			<button class="btn-cancel"  id="btn-cancel">Cancel</button>
@@ -98,6 +102,8 @@ function makeDescription(predstava){
 		</div>`;
 		makeComments(predstava)
 		addFunctionalityToTextarea()
+		}
+		
 	}
 }
 function makeComments(predstava){
@@ -135,7 +141,7 @@ function makeComments(predstava){
 				</div>`;
 				// console.log(e.path[1].childNodes[3].lastChild.childNodes[3].childNodes[3])
 				// console.log(e.path[1])
-				console.log(e.path[1].childNodes[3].lastChild.childNodes[3].childNodes[1])
+				console.log(e.path[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1])
 				let btn_cancel_reply = e.path[1].childNodes[3].lastChild.childNodes[3].childNodes[1];
 				let btn_comment_reply = e.path[1].childNodes[3].lastChild.childNodes[3].childNodes[3];
 				
@@ -223,7 +229,7 @@ function postReply(predstava, key, reply_textarea, btn_cancel_reply){
 				e.preventDefault();
 				if (this.readyState == 4) {
 					if (this.status == 200) {
-						loadPage();
+						loadPage(false);
 						reply_textarea.value = "";
 						btn_cancel_reply.click();
 					} else {
@@ -252,7 +258,7 @@ function postReply(predstava, key, reply_textarea, btn_cancel_reply){
 					e.preventDefault();
 					if (this.readyState == 4) {
 						if (this.status == 200) {
-							loadPage();
+							loadPage(false);
 							reply_textarea.value = "";
 							btn_cancel_reply.click();
 
@@ -275,7 +281,7 @@ function postReply(predstava, key, reply_textarea, btn_cancel_reply){
 					e.preventDefault();
 					if (this.readyState == 4) {
 						if (this.status == 200) {
-							loadPage();
+							loadPage(false);
 							reply_textarea.value = "";
 							btn_cancel_reply.click();
 						} else {
@@ -379,7 +385,7 @@ function postComment(predstava){
 				e.preventDefault();
 				if (this.readyState == 4) {
 					if (this.status == 200) {
-						loadPage();
+						loadPage(false);
 						textarea.value = "";
 					} else {
 					alert("Greska: " + this.status);
@@ -404,7 +410,7 @@ function postComment(predstava){
 				e.preventDefault();
 				if (this.readyState == 4) {
 					if (this.status == 200) {
-						loadPage();
+						loadPage(false);
 						textarea.value = "";
 					} else {
 					alert("Greska: " + this.status);
